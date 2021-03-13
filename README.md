@@ -2,6 +2,22 @@
 
 This is a community effort to help us keep our mission to moon on track!
 
+## Overview
+
+DOGIRA is a new ERC-20 token on the Etherum mainnet, that is taking community contributions and "buying the dip", both of which made HOGE moon so quickly, to a next level. Instead of just chants, you get actual rewards for these actions via token mechanics. This project has been audited by WarOnRugs, partnered with the successful FEG token and has its liquidity locked for 3 months.
+
+Every 10th buy gets a substantial bonus. If you buy quickly after a sell, you get an extra boost as well.
+Every transaction redistributed 1% to all holders (you earn interest just by holding, no staking needed) and 1% goes into a special wallet called Dogecity. That wallet is used to reward community members for their contributions (DOGEBLISS) and has a payout limit of 5% of the balance (i.e. can't be dumped on us). Besides the reward you will also earn XP for contributing, which will lower your buy and sell fees!
+
+Each txn has a 1% tx fee that is split across all holders and 1% doge fee for Dogecity. Dogecity is a community fund that is used to reward contributions. If you post memes, post on reddit, or do other kinds of activities that help spread the word, you can apply for [Dogebliss](https://docs.google.com/forms/d/1tPeKvO25rRLUOKpCm8nnvtAZko2MK9j8K9fuFIs7Q7U/viewform?edit_requested=true), which will pay out 0.001% to 0.1% of the Dogecity reward pool. To prevent dumping, Dogecity can only pay out up to 5% per day. 
+Each buy has a buy fee that will go into a prize pool, buy fee is calculated by buy weight. The more you buy, the smaller the fee. Every 10th buy awards that particular buyer the whole prize pool accumulated during the past 9 buys. Additionally, every buy gets a buy bonus that is powered by sell fees (5% sell fee). That means if you are the first to buy after a series of sells, you get all of summed up 5% fees those sellers were charged on top of the balance you purchased. Neato, right? Eat those dips!!
+
+DOGIRA still is less than 1/100th the valuation of of HOGE and less than 1/10000th of DOGE. If you missed out before, wait no longer!
+
+There are two main community functions that anyone can call every 10 minutes. Either `verysmashed` to burn 2% of the liquidity pool, or `dogebreath` to redistribute 2% of the liquidity pool across all holders.
+
+This goes farther than HOGE. DOGIRA heavily incentives contributions, penalizes selloffs and encourages buying the dips. It also encourages buying frequently for additional rewards. If you buy larger amounts, the bonuses you get should offset the transaction fees!
+
 ## Quick Info
 
 * Symbol: DOGIRA (ERC20, on Ethereum mainnet)
@@ -15,22 +31,23 @@ This is a community effort to help us keep our mission to moon on track!
 * War On Rugs Audit: https://twitter.com/WARONRUGS/status/1359556626559217665
 * Partnership With [$FEG](https://fegtoken.com/): https://fegtoken.medium.com/what-is-feg-token-9e5bab547de0 (search for DOGIRA)
 * Twitter: https://twitter.com/DOGIRATOKEN
-* Medium: https://muskandre.medium.com/
+* Medium: https://muskandre.medium.com/ (Read the Medium articles, they are helpful!)
 
-## Overview
+### Presale Details
 
-DOGIRA is an novel ERC 20 token with amazing features that encourage and reward community support with DOGEBLISS (daily airdrops) as well as Earn passive income with your funds in your wallet.
+The presale is of course over now, but for reference...
 
-1. Get more money and earn APY just by holding the token in your wallet. Just like Staking but without security risks.
-2. Earn more tokens, enough to cover the outrageous gas fee when you Buy after a sell. Buy Bonus 🚀
-3. Earn even more tokens when you are the 10th buyer as you earn a huge chunk of the transaction fees.
-4. Deflationary tokenomics with burn function that can be triggered by the community whenever they want. Price keeps going up.
-5. Would take a 39178x from current price to catch up to $DOGE and it has so much more features.
-6. Still not even 1/100th of HOGE
+* Token amount: 48 million (48%)
+* Hard Cap: 50 ETH
+* Soft Cap: 15 ETH
+* Presale Price: 1 ETH = 960,000 DOGIRA ($0.0017)
+* Uniswap Price At Listing: 1ETH = 800,000 DOGIRA $(0.002) (presale buys at 20% discount)
+
+80% of raised ETH was used for Uniswap liquidity. 20% of raised ETH covered costs for launch, audit, and front-end. The rest for the team.
 
 ## How To Support Dogira
 
-HOGE succeeded because of its unique community. We need to create a similar environment for Dogira to moon. 
+HOGE succeeded because of its unique community. We need to create a similar environment for Dogira to moon as well. 
 
 ### Telegram
 We should all follow a few rules in the chat:
@@ -108,5 +125,14 @@ They advertise about Dogira in their Telegram pinned posts. So we will see an in
 
 #### How Can I Call The Special Tokenomics Functions?
 
-I will give a tutorial here soon!
+There is a tutorial [here](https://muskandre.medium.com/how-to-interact-with-a-contract-manually-1181b06bf5c). I hope we will get a GUI for this soon, but for now in short:
+1. Go to the contract: https://etherscan.io/token/0x4b86e0295e7d32433ffa6411b82b4f4e56a581e1#writeContract
+1. Click `Connect To Web3` at the top and connect with your wallet (e.g. Metamask)
+1. There are several free-to-call functions under `Read Contract` (https://etherscan.io/address/0x4b86e0295e7d32433ffa6411b82b4f4e56a581e1#readContract)   
+    1. `GetTimeTillNextAttack`: If zero, then you can call `dogebreath` or `verysmashed` (see below). If greater than zero, these are still cooling down and calling them would not achieve anything.
+1. Decide which function to call under `Write Contract` (https://etherscan.io/token/0x4b86e0295e7d32433ffa6411b82b4f4e56a581e1#writeContract):
+    1. `dogebreath`: Redistribute token supply across holders (2%)
+    1. `verysmashed`: Burn the token supply (2%)
+    1. `dogeit`: Bet on the bonus pool. The amount needs to be specified in `Wei`. If you don't know what that is, don't call this function :).
 
+With the current ETH fees, I think only `dogebreath` is worth calling once every now and then to enrich all holders.
